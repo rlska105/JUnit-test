@@ -26,15 +26,13 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-com.example.calculation.web')
     compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-mustache')
     compile('com.h2database:h2')
-    compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
-    annotationProcessor('org.projectlombok:lombok') //lombok version error 방지
-    testAnnotationProcessor('org.projectlombok:lombok') //lombok version error 방지
 
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
 
     compile("org.mariadb.jdbc:mariadb-java-client")
