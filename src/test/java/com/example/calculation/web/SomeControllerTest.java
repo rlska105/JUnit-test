@@ -25,7 +25,7 @@ public class SomeControllerTest {
     public void sample() throws Exception { //throws Exception 필수!
         String sample = "Sample";
 
-        mvc.perform(get("/"))
+        mvc.perform(get("/sample"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(sample))
                 .andDo(print());

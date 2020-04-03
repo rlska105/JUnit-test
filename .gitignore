@@ -26,7 +26,7 @@ dist/
 nbdist/
 .nb-gradle/
 .gradle/5.2.1/vcsMetadata-1/
-build/classes/java/main/Application.class
+build/classes/java/main/com.example.calculation.Application.class
 build/classes/java/main/com.example.calculation.web/SomeController.class
 build/classes/java/test/com.example.calculation.web/
 build/generated/
