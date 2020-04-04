@@ -44,7 +44,7 @@ public class PostsApiControllerTest {
     }
 
     @Test
-    public void Fetch_save() {
+    public void Fetch_save() throws Exception {
         String title = "content";
         String content = "title";
 
@@ -72,7 +72,7 @@ public class PostsApiControllerTest {
     }
 
     @Test
-    public void Fetch_update(){
+    public void Fetch_update() throws Exception {
         Posts savedPosts = postsRepository.save(Posts.builder()
                 .title("title")
                 .content("content")

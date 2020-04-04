@@ -5,23 +5,24 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
+    @Column(length = 500, nullable = false)
     private String title;
-    private String author;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
+
+    private String author;
 
     @Builder
     public Posts(String title, String author, String content) {
@@ -29,6 +30,7 @@ public class Posts {
         this.author = author;
         this.content = content;
     }
+
     public void update(String title, String content) {
         this.title = title;
         this.content = content;
