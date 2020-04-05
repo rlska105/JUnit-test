@@ -1,5 +1,6 @@
 package com.example.calculation.domain;
 
+import org.apache.tomcat.jni.Local;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,22 +47,25 @@ public class PostsRepositoryTest {
 
     @Test
     public void BaseTimeEntity_등록() {
-        //given
-        LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
+        LocalDateTime now =LocalDateTime.of(2020,4,5,0,0,0);
         postsRepository.save(Posts.builder()
                 .title("title")
+                .author("Kee")
                 .content("content")
-                .author("author")
                 .build());
-        //when
+
         List<Posts> postsList = postsRepository.findAll();
 
-        //then
         Posts posts = postsList.get(0);
 
-        System.out.println(">>>>>>>>> createDate=" + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
+        System.out.println(">>>>>>>> createDate=" + posts.getCreateDate() + ", modifiedDate=" + posts.getModifiedDate());
 
-        assertThat(posts.getCreatedDate()).isAfter(now);
+        assertThat(posts.getCreateDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
+
+
+
+
     }
+
 }
